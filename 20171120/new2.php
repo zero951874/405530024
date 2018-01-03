@@ -30,15 +30,24 @@ foreach ($date as $f){
 echo "</table>";
 
 echo "<table border=1><tr><th>Name</th><th>Stock</th><th>Sold</th></tr>";
-$users = array( array('Name' => '1', 'stock' => 'Amy', 'Sold' => 'Pond'), array('Name' => '2', 'stock' => 'Rory', 'Sold' => 'Williams'), array('Name' => '3', 'stock' => 'Luke', 'Sold' => 'Skywalker'));
+$a=array(array('1' => 'Volvo','2' => 'BMW', '3' => 'saab','4'=>'Land Rover'),array('1' => '22','2' => '15', '3' => '5','4'=>'17'),array('1' => '18','2' => '13', '3' => '2','4'=>'15'));
 
-    for($i=0;$i<count($users);$i++)
-    {
-        echo "<tr>";
-        echo "<td>".$users[$i]['Name']."</td>";
-        echo "<td>".$users[$i]['stock']."</td>";
-        echo "<td>".$users[$i]['Sold']."</td>";
-        echo "</tr>";
-    }
+function get($item)
+{
+  return $item['1'];
+}
+function gt($item)
+{
+  return $item['2'];
+}
+function g($item)
+{
+  return $item['3'];
+}
+function t($item)
+{
+  return $item['4'];
+}
+echo '<td>'.join('</td><td>', array_map('get', $a)). '</td>'.'<tr>'.'<td>'.join('</td><td>', array_map('gt', $a)). '</td>'.'<tr>'.'<td>'.join('</td><td>', array_map('g', $a)). '</td>'.'<tr>'.'<td>'.join('</td><td>', array_map('t', $a)). '</td>';
     echo "</table>";
 ?>
