@@ -2,9 +2,9 @@
 $w = $_POST['a'];
 $h = $_POST['b'];
 if($w==null||$h==null){
-    echo "內容不能為空白";
+    echo "輸入內容不能為空白";
 }
-if(is_numeric($w)&&is_numeric($h)){
+else if(is_numeric($w)&&is_numeric($h)){
     $bmi=$w/($h*$h);
     $bmi=round($bmi,2);
 echo "你的體重:".$w."<br>";
@@ -34,4 +34,5 @@ if($filename ==null)
     echo '<img src = "upload/'.$filename.'"/>';
 }
 
-?> 
+?>
+    
