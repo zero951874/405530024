@@ -2,7 +2,7 @@
 $w = $_POST['a'];
 $h = $_POST['b'];
 if($w==null||$h==null){
-    echo "輸入內容不能為空白";
+    echo "輸入內容不能為空白<BR/>";
 }
 else if(is_numeric($w)&&is_numeric($h)){
     $bmi=$w/($h*$h);
@@ -24,7 +24,7 @@ $allowed =  array('gif','png' ,'jpg','jpeg');
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
 if($filename ==null)
 {
-    echo "請上傳圖片";
+    echo "請上傳圖片<BR/>";
 }else if(!in_array($ext,$allowed) ) {
     echo "上傳失敗<BR/>";
     echo "上傳檔案為非圖片檔案類型";
@@ -35,4 +35,5 @@ if($filename ==null)
 }
 
 ?>
+    
     
